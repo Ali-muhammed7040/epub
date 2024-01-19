@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
 
-function App() {
+import React from "react";
+import Book from "./Book";
+import mock from "./mockData.json";
+import { log } from "util";
+
+const App = () => {
+  const bookContent = {
+    left: <div>Your JSX content for the left page</div>,
+    right: <div>Your JSX content for the right page</div>,
+  };
+  console.log(mock, "mc");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Book chapters={mock} />
     </div>
   );
-}
+};
 
 export default App;
